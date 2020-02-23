@@ -1,0 +1,10 @@
+DROP DATABASE IF EXISTS Burgers_DB;
+CREATE DATABASE Burgers_DB;
+USE Burgers_DB;
+
+CREATE TABLE Burgers(
+id SMALLINT AUTO_INCREMENT,
+burger_name VARCHAR(100),
+devoured BOOLEAN default false,
+PRIMARY KEY (id)
+);
