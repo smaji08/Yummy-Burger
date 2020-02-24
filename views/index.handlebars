@@ -1,0 +1,49 @@
+<div class="container container-head">
+    <img src="/assets/img/burger-10956.png" id="burgerpic">
+    <h1>Eat-Da-Burger!!</h1>
+</div>
+<div class="container container-burgers">
+    <div class="row">
+        <div class="left-div">
+            <ul>
+                {{#each Burgers}}
+                    {{#unless devoured}}
+                        {{> burger-block}}
+                    {{/unless}}
+                {{/each}}
+            </ul>
+        </div>
+        <div class="right-div">
+            <ul>
+                {{#each Burgers}}
+                    {{#if devoured}}
+                    {{> burger-block}}
+                    {{/if}}
+                {{/each}}
+            </ul>
+        </div>
+    </div>    
+</div>
+{{!-- <ul>
+  {{#each Burgers}}
+    {{#unless devoured}}
+      {{> burger-block}}
+      {{/unless}}
+  {{/each}}
+</ul> --}}
+
+{{!-- <ul>
+  {{#each Burgers}}
+    {{#if devoured}}
+      {{> burger-block}}
+      {{/if}}
+  {{/each}}
+</ul> --}}
+
+<form class="create-form">
+    <textarea id="burgName" name="name" rows="5" cols="30"></textarea>
+    <br><br>
+    <button id="btnSubmit" type="submit">Add Burger to Devour</button>
+    <p><b>Enter a burger you want to eat!!</b></p>
+</form>
+

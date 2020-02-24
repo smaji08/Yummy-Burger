@@ -16,6 +16,7 @@ function objToSql(ob) {
     // loop through the keys and push the key/value as a string int arr
     for (var key in ob) {
       var value = ob[key];
+      console.log("in objtoSQL func " + key, value, ob);
       // check to skip hidden properties
       if (Object.hasOwnProperty.call(ob, key)) {
         // if string with spaces, add quotations (Lana Del Grey => 'Lana Del Grey')
@@ -26,7 +27,10 @@ function objToSql(ob) {
         // e.g. {sleepy: true} => ["sleepy=true"]
         arr.push(key + "=" + value);
       }
+      console.log("inside for loop " + arr);
     }
+    console.log("outside " + arr);
+    return arr.toString();
 }  
   
 var orm = {
@@ -76,8 +80,20 @@ var orm = {
     
           cb(result);
         });
+      },
+
+      delete: function(table, condition, cb){
+        var queryString = "DELETE FROM " + table
+
+        queryString += " WHERE "
+        queryString += condition
+
+        console.log(queryString)
+        connection.query(queryString, function(err, result){
+          if (err) throw err
+          cb(result)
+        })
       }
-    
 }
 
 module.exports = orm;
