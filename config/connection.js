@@ -9,7 +9,7 @@ var connection = mysql.createConnection({
   password: process.env.DB_PASSWORD,
   database: process.env.DB_NAME
 });
-
+  
 // Make connection.
 connection.connect(function(err) {
   if (err) {
