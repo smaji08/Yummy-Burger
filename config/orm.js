@@ -32,38 +32,11 @@ function objToSql(ob) {
 }  
   
 var orm = {
-    // all: function(tableInput, col, cb) {
-    //   var queryString = "SELECT *, ";
-
-    //   queryString += "count(IF(NOT ";
-    //   queryString += col.toString();
-    //   queryString += ",1,NULL)) OVER() toEat, ";
-    //   queryString += "count(IF(";
-    //   queryString += col.toString();
-    //   queryString += ",1,NULL)) OVER() ate ";
-    //   queryString += "FROM " + tableInput + ";";
-    //   console.log(queryString);
-    //   connection.query(queryString, function(err, result) {
-    //     if (err) throw err
-    //     cb(result)
-    //   });
-    // },  
-    // SELECT *, (SELECT count(IF(NOT devoured,1,NULL)) FROM Burgers ) toEat, 
-    // (SELECT count(IF(devoured,1,NULL))  FROM Burgers ) ate  FROM Burgers;
-    all: function(tableInput, col, cb) {
-      var queryString = "SELECT *, ";
-
-      queryString += "(SELECT count(IF(NOT ";
-      queryString += col.toString();
-      queryString += ",1,NULL)) FROM " +tableInput + ") toEat, "
-      queryString += "(SELECT count(IF(";
-      queryString += col.toString();
-      queryString += ",1,NULL)) FROM " +tableInput + ") ate "
-      queryString += "FROM " + tableInput + ";";
-      console.log(queryString);
+    all: function(tableInput, cb) {
+      var queryString = "SELECT * FROM " + tableInput + ";";
       connection.query(queryString, function(err, result) {
-        if (err) throw err
-        cb(result)
+        if (err) throw err;
+        cb(result);
       });
     },  
 

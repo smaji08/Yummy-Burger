@@ -1,4 +1,14 @@
 $(function() {
+    var liToEat = $(".liToEat");
+
+    if(liToEat.length) {$(".left-div ul h3").text("Ready to Eat..")}
+    else {$(".left-div ul h3").text("Add some burgers to Enjoy...")}
+    
+    var liAte = $(".liAte");
+
+    if(liAte.length) {$(".right-div ul h3").text("Woww..You are doing great!")}
+    else {$(".right-div ul h3").text("Hungry!!!")}
+    
     $(".create-form").on("submit", function(event){
         event.preventDefault()
         
