@@ -33,15 +33,15 @@ function objToSql(ob) {
   
 var orm = {
     all: function(tableInput, col, cb) {
-      var queryString = "SELECT *, "
+      var queryString = "SELECT *, ";
 
-      queryString += "count(IF(NOT "
-      queryString += col.toString()
-      queryString += ",1,NULL)) OVER() toEat, "
-      queryString += "count(IF("
-      queryString += col.toString()
-      queryString += ",1,NULL)) OVER() ate "
-      queryString += "FROM " + tableInput + ";"
+      queryString += "count(IF(NOT ";
+      queryString += col.toString();
+      queryString += ",1,NULL)) OVER() toEat, ";
+      queryString += "count(IF(";
+      queryString += col.toString();
+      queryString += ",1,NULL)) OVER() ate ";
+      queryString += "FROM " + tableInput + ";";
       console.log(queryString);
       connection.query(queryString, function(err, result) {
         if (err) throw err
