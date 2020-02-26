@@ -11,7 +11,7 @@
     <div class="row">
         <div class="left-div">
           <ul>
-            <h3> Ready to Eat..</h3>
+            {{#if Burgers.0.toEat}}<h3> Ready to Eat..</h3>{{else}}<h3> Add some burgers to Enjoy...</h3>{{/if}}
               {{#each Burgers}}
                 {{#unless devoured}}
                   <li>
@@ -24,7 +24,7 @@
         </div>
         <div class="right-div">
           <ul>
-            <h3> Woww..You are doing great!</h3>
+            {{#if Burgers.0.ate}}<h3>Woww..You are doing great!</h3>{{else}}<h3>Hungry!!!</h3>{{/if}}
               {{#each Burgers}}
                 {{#if devoured}}
                   <li>
