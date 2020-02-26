@@ -37,10 +37,10 @@ var orm = {
 
       queryString += "count(IF(NOT "
       queryString += col.toString()
-      queryString += ",1,NULL)) OVER() AS toEat, "
-      queryString += "count(IF( "
+      queryString += ",1,NULL)) OVER() toEat, "
+      queryString += "count(IF("
       queryString += col.toString()
-      queryString += ",1,NULL)) OVER() AS ate "
+      queryString += ",1,NULL)) OVER() ate "
       queryString += "FROM " + tableInput + ";"
       console.log(queryString);
       connection.query(queryString, function(err, result) {
