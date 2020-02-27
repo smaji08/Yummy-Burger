@@ -4,7 +4,6 @@ body{
 }
 h1, h3{
     color:rgb(107, 4, 4);
-    
 }
 .container-head{
     text-align: center;
@@ -55,10 +54,14 @@ li {
     padding: 5px;
     margin: 5px;
     background: #f3cd9c;
-  }
-.footer{
-    position: relative;
-    display: flex;
-    justify-content: center;
+}
+.footer {
+    position:fixed;
+    left:0px;
+    bottom:0px;
+    height:20px;
+    width:100%;
+    text-align: center;
     color: rgb(3, 3, 88);
+    z-index: -1;
 }

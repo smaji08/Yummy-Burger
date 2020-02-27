@@ -20,7 +20,7 @@
                 {{#if devoured}}
                   <li class="liAte">
                     <textarea class="display" rows="1" cols= "30" disabled>{{id}}. {{burger_name}}</textarea>
-                    <button class="delete" data-id="{{id}}" data-devour="{{devoured}}" title= "click to remove"><i class="far fa-trash-alt"></i></button>
+                    <button class="delete" data-id="{{id}}" data-devour="{{devoured}}" data-name = "{{burger_name}}" title= "click to remove"><i class="far fa-trash-alt"></i></button>
                   </li>
                 {{/if}}
               {{/each}}
