@@ -3,7 +3,7 @@ body{
     background-image: url("/assets/img/abstract-antique-backdrop-background-163999.jpg");
 }
 h1, h3{
-    color:rgb(167, 13, 13);
+    color:rgb(107, 4, 4);
     
 }
 .container-head{
@@ -56,3 +56,9 @@ li {
     margin: 5px;
     background: #f3cd9c;
   }
+.footer{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    color: rgb(3, 3, 88);
+}
